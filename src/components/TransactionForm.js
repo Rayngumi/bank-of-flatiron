@@ -28,7 +28,6 @@ const TransactionForm = ({ addTransaction }) => {
     resetForm();
   };  
 
-
   const resetForm = () => {
     setFormData({
       date: '',
@@ -51,7 +50,6 @@ const TransactionForm = ({ addTransaction }) => {
         />
       </div>
       <div>
-        <label htmlFor="description">Description:</label>
         <input
           type="text"
           id="description"
@@ -62,7 +60,6 @@ const TransactionForm = ({ addTransaction }) => {
         />
       </div>
       <div>
-        <label htmlFor="category">Category:</label>
         <input
           type="text"
           id="category"
@@ -73,7 +70,6 @@ const TransactionForm = ({ addTransaction }) => {
         />
       </div>
       <div>
-        <label htmlFor="amount">Amount:</label>
         <input
           type="number"
           id="amount"
