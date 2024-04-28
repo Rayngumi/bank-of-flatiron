@@ -1,12 +1,9 @@
+// SearchBar.js
 import React from 'react';
 
-const SearchBar = ({ transactions, setTransactions }) => {
+const SearchBar = ({ filterTransactions }) => {
   const handleSearch = (e) => {
-    const searchTerm = e.target.value.toLowerCase();
-    const filteredTransactions = transactions.filter(transaction =>
-      transaction.description.toLowerCase().includes(searchTerm)
-    );
-    setTransactions(filteredTransactions);
+    filterTransactions(e.target.value);
   };
 
   return (
