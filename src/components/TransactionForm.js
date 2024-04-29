@@ -1,4 +1,3 @@
-// TransactionForm.js
 import React, { useState } from 'react';
 
 const TransactionForm = ({ addTransaction }) => {
@@ -26,8 +25,9 @@ const TransactionForm = ({ addTransaction }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="date">Date:</label>
-        <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} />
+      <label>
+        Date:<input type="date" id="date" name="date" value={formData.date} onChange={handleChange} />
+      </label>
       </div>
       <div>
         <input type="text" id="description" name="description" placeholder="Description" value={formData.description} onChange={handleChange} />

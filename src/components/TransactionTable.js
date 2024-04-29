@@ -1,14 +1,13 @@
-// TransactionTable.js
 import React from 'react';
 
-const TransactionTable = ({ transactions }) => {
+const TransactionTable = ({ transactions, sortTransactions, sortMethod, sortDirection }) => {
   return (
     <table>
       <thead>
         <tr>
-          <th>Date</th>
-          <th>Description</th>
-          <th>Category</th>
+          <th onClick={() => sortTransactions('date')}>Date</th>
+          <th onClick={() => sortTransactions('description')}>Description {sortMethod === 'description' && sortDirection === 'asc' ? '▲' : '▼'}</th>
+          <th onClick={() => sortTransactions('category')}>Category {sortMethod === 'category' && sortDirection === 'asc' ? '▲' : '▼'}</th>
           <th>Amount</th>
         </tr>
       </thead>

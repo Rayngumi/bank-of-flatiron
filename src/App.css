@@ -1,74 +1,33 @@
+body {
+  margin: 10px;
+}
+
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  padding: 20px;
+  background-color: white;
 }
+
 
 h1 {
-  margin-bottom: 20px;
-  background-color: blueviolet;
+  background-color: #7904e6;
   color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 24px;
 }
 
-form {
-  margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Form Inputs and Buttons */
-form div {
-  margin: 5px;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="date"],
 button {
-  padding: 10px 15px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  font-size: 16px;
+  background-color: #C0C0C0;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="date"] {
-  width: 200px;
+button:hover {
+  background-color: #808080;
 }
 
 table {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background-color: white;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-table td {
-  border: 1px solid #dee2e6;
-  padding: 15px;
-}
-
-input[type="text"] {
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  width: 70%;
-}
-
-@media screen and (max-width: 600px) {
-  form div {
-    width: 100%;
-  }
-
-  input[type="text"],
-  input[type="number"],
-  input[type="date"] {
-    width: 100%;
-  }
-}

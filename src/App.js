@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import TransactionsTable from './components/TransactionTable';
 import TransactionForm from './components/TransactionForm';
@@ -16,6 +15,8 @@ const initialTransactions = [
 const App = () => {
   const [transactions, setTransactions] = useState(initialTransactions);
   const [filteredTransactions, setFilteredTransactions] = useState(initialTransactions);
+  const [sortMethod, setSortMethod] = useState(null); // Track sorting method
+  const [sortDirection, setSortDirection] = useState('asc'); // Track sorting direction
 
   useEffect(() => {
     setFilteredTransactions(transactions);
@@ -32,12 +33,32 @@ const App = () => {
     setFilteredTransactions(filteredTransactions);
   };
 
+  const sortTransactions = (method) => {
+    let sortedTransactions = [...filteredTransactions];
+    if (method === 'category' || method === 'description') {
+      sortedTransactions.sort((a, b) => {
+        const comparison = a[method].localeCompare(b[method]);
+        return sortDirection === 'asc' ? comparison : -comparison;
+      });
+      setSortMethod(method);
+    }
+    setFilteredTransactions(sortedTransactions);
+    setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+  };
+
   return (
     <div className="App">
       <h1>The Royal Bank of Flatiron</h1>
       <div><SearchBar filterTransactions={filterTransactions} /></div>
       <div><TransactionForm addTransaction={addTransaction} /></div>
-      <div><TransactionsTable transactions={filteredTransactions} /></div>
+      <div>
+        <TransactionsTable
+          transactions={filteredTransactions}
+          sortTransactions={sortTransactions}
+          sortMethod={sortMethod}
+          sortDirection={sortDirection}
+        />
+      </div>
     </div>
   );
 };
