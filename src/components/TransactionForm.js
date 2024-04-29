@@ -24,21 +24,24 @@ const TransactionForm = ({ addTransaction }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-      <label>
-        Date:<input type="date" id="date" name="date" value={formData.date} onChange={handleChange} />
-      </label>
+      <div className="form-container">
+        <div>
+          <label>Date:</label>
+          <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} />
+        </div>
+        <div>
+          <input type="text" id="description" name="description" placeholder="Description" value={formData.description} onChange={handleChange} />
+        </div>
+        <div>
+          <input type="text" id="category" name="category" placeholder="Category" value={formData.category} onChange={handleChange} />
+        </div>
+        <div>
+          <input type="number" id="amount" name="amount" placeholder="Amount" value={formData.amount} onChange={handleChange} />
+        </div>
+        <div className="center-button">
+          <button type="submit">Add Transaction</button>
+        </div>
       </div>
-      <div>
-        <input type="text" id="description" name="description" placeholder="Description" value={formData.description} onChange={handleChange} />
-      </div>
-      <div>
-        <input type="text" id="category" name="category" placeholder="Category" value={formData.category} onChange={handleChange} />
-      </div>
-      <div>
-        <input type="number" id="amount" name="amount" placeholder="Amount" value={formData.amount} onChange={handleChange} />
-      </div>
-      <button type="submit">Add Transaction</button>
     </form>
   );
 };
