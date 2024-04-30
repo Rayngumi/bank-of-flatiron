@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import TransactionsTable from './components/TransactionTable';
 import TransactionForm from './components/TransactionForm';
 import SearchBar from './components/SearchBar';
-import './App.css';
 
 const initialTransactions = [
   { id: 1, date: '2019-12-01', description: "Paycheck from Bob's Burgers", category: 'Income', amount: 1000 },
@@ -15,8 +14,8 @@ const initialTransactions = [
 const App = () => {
   const [transactions, setTransactions] = useState(initialTransactions);
   const [filteredTransactions, setFilteredTransactions] = useState(initialTransactions);
-  const [sortMethod, setSortMethod] = useState(null); // Track sorting method
-  const [sortDirection, setSortDirection] = useState('asc'); // Track sorting direction
+  const [sortMethod, setSortMethod] = useState(null);
+  const [sortDirection, setSortDirection] = useState('asc'); 
 
   useEffect(() => {
     setFilteredTransactions(transactions);
@@ -47,8 +46,8 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <h1>The Royal Bank of Flatiron</h1>
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-bold text-center bg-purple-700 text-white">The Royal Bank of Flatiron</h1>
       <div><SearchBar filterTransactions={filterTransactions} /></div>
       <div><TransactionForm addTransaction={addTransaction} /></div>
       <div>

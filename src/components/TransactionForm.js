@@ -23,27 +23,32 @@ const TransactionForm = ({ addTransaction }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="form-container">
-        <div>
-          <label>Date:</label>
-          <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} />
+    <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 container">
+      <div className="flex flex-wrap mb-4">
+        <div className="w-full md:w-1/4 px-3 md:mb-0">
+          <label className="text-gray-700 text-sm" htmlFor="date">Date: </label>
+          <input className="shadow appearance-none border rounded w-4/5 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" name="date" type="date" value={formData.date} onChange={handleChange} />
         </div>
-        <div>
-          <input type="text" id="description" name="description" placeholder="Description" value={formData.description} onChange={handleChange} />
+        <div className="w-full md:w-1/4 px-3 md:mb-0">
+          <label className="hidden" htmlFor="description">Description:</label>
+          <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" name="description" type="text" placeholder="Description" value={formData.description} onChange={handleChange} />
         </div>
-        <div>
-          <input type="text" id="category" name="category" placeholder="Category" value={formData.category} onChange={handleChange} />
+          <div className="w-full md:w-1/4 px-3 md:mb-0">
+          <label className="hidden" htmlFor="category">Category:</label>
+          <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="category" name="category" type="text" placeholder="Category" value={formData.category} onChange={handleChange} />
         </div>
-        <div>
-          <input type="number" id="amount" name="amount" placeholder="Amount" value={formData.amount} onChange={handleChange} />
-        </div>
-        <div className="center-button">
-          <button type="submit">Add Transaction</button>
+        <div className="w-full md:w-1/4 px-3 md:mb-0">
+          <label className="hidden" htmlFor="amount">Amount:</label>
+          <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="amount" name="amount" type="number" placeholder="Amount" value={formData.amount} onChange={handleChange} />
         </div>
       </div>
+      <div className="flex items-center justify-center">
+        <button className="bg-gray-300 hover:bg-gray-500 py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        Add Transaction
+        </button>
+      </div>
     </form>
-  );
+);
 };
 
 export default TransactionForm;
